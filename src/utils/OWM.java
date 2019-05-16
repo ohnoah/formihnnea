@@ -2,9 +2,7 @@ package utils;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import classes.currentweather.CurrentWeather;
 import classes.forecast.ForecastInformationDay;
@@ -26,6 +24,10 @@ public class OWM {
     public static ForecastInformationWeek getWeekForecast(Location location) {
 
         String query;
+        if (location == null){
+            System.out.println("Null location");
+            return null;
+        }
 
         if (location.owmId != null){
             query = "http://api.openweathermap.org/data/2.5/forecast?id=" + location.owmId+ "&APPID=" + api_id_owm;
@@ -61,6 +63,11 @@ public class OWM {
 
     public static ForecastInformationDay getDayForecast(Location location){
         String query;
+
+        if (location == null){
+            System.out.println("Null location");
+            return null;
+        }
 
         if (location.owmId != null){
             query = "http://api.openweathermap.org/data/2.5/forecast?id=" + location.owmId+ "&APPID=" + api_id_owm;
@@ -131,7 +138,7 @@ public class OWM {
         System.out.println(currentWeather.dateTime); //Time of forecast
         System.out.println(currentWeather.clouds.cloudiness); //Cloud cover amount 0-1
         System.out.println(currentWeather.coordinate.latitude); //Latitude of place (similarly "longitude")
-        System.out.println(currentWeather.rain.rainAmt); //Rain amount - null if no rain
+        System.out.println(currentWeather.rain != null ? currentWeather.rain.rainAmt : "N/A"); //Rain amount - null if no rain so use this to fix
         System.out.println(currentWeather.cityName); //Name of place
         System.out.println(currentWeather.visibility); //visibility
         System.out.println(currentWeather.snow); //amount of snow - may be null if no snow
