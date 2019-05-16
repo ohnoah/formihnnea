@@ -15,6 +15,7 @@ public class QueryParser {
         try{
             input = new URL(query).openStream();
         } catch (Exception e){
+            System.out.println(e);
             System.out.println("No connection");
             return null;
         }

@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Iterator;
 
+import classes.coords.Coordinate;
 import classes.currentweather.CurrentWeather;
 import classes.forecast.ForecastInformationDay;
 import classes.forecast.ForecastInformationWeek;
@@ -20,6 +21,30 @@ import static utils.QueryParser.callQuery;
 public class OWM {
 
     private static final String api_id_owm = "d3701ecc1c0c1202a1e0add340d8d345";
+
+    public static String getIdFromLatLong(Coordinate coordinate){
+        String query;
+
+        if (coordinate == null){
+            System.out.println("Null coordinates");
+            return null;
+        } else if ((coordinate.longitude == null) || (coordinate.latitude == null)){
+            System.out.println("Invalid coordinates");
+            return null;
+        } else {
+            query = "http://api.openweathermap.org/data/2.5/weather?lat=" + coordinate.latitude + "&lon=" + coordinate.longitude + "&APPID=" + api_id_owm;
+        }
+
+        System.out.println(query);
+
+        JSONObject jobj = callQuery(query);
+
+        Gson g = new Gson();
+
+        JsonObject jsonObject = g.fromJson(jobj.toJSONString(), JsonObject.class);
+
+        return jsonObject.get("id").getAsString();
+    }
 
     public static ForecastInformationWeek getWeekForecast(Location location) {
 

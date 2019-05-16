@@ -20,4 +20,11 @@ public class Coordinate {
      */
     @SerializedName("lat")
     public String latitude;
+
+    public Coordinate(){}
+
+    public Coordinate(String longitude, String latitude){
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 }
