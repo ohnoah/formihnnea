@@ -20,6 +20,104 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.cam.details.DetailsController">
     <children>
+      <ScrollPane layoutY="336.0" prefHeight="337.0" prefWidth="629.0">
+        <content>
+          <AnchorPane prefHeight="320.0" prefWidth="628.0">
+               <children>
+                  <GridPane prefHeight="320.0" prefWidth="629.0" style="-fx-background-color: FFFFFF;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="47.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/visibility.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="39.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/rainchance.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/sunny.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/clouds.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/temp.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/sun.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/sun.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/sun.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/sun.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                        <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/sun.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/sun.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../pics/sun.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
       <ToggleButton layoutX="176.0" layoutY="290.0" mnemonicParsing="false" text="ToggleButton" />
         <GridPane layoutX="25.0" layoutY="30.0" prefHeight="248.0" prefWidth="431.0">
             <columnConstraints>
@@ -57,7 +155,7 @@
                         </Label>
                         <ImageView fitHeight="60.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                             <image>
-                                <Image url="../../pics/sun.png" />
+                                <Image url="@../../pics/sun.png" />
                             </image>
                             <GridPane.margin>
                                 <Insets bottom="10.0" />
@@ -234,58 +332,5 @@
                 <ImageView fx:id="btnBack" fitHeight="24.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" />
             </graphic>
         </Button>
-        <GridPane layoutX="115.0" layoutY="553.0">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-        </GridPane>
-      <GridPane layoutX="5.0" layoutY="348.0" prefHeight="320.0" prefWidth="470.0" style="-fx-background-color: FFFFFF;">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="59.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="59.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="105.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="103.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="104.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="101.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <ImageView fitHeight="28.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <image>
-                  <Image url="@../../pics/visibility.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="39.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-               <image>
-                  <Image url="@../../pics/rainchance.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-               <image>
-                  <Image url="@../../pics/sunny.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
-               <image>
-                  <Image url="@../../pics/clouds.png" />
-               </image>
-            </ImageView>
-         </children>
-      </GridPane>
     </children>
 </Pane>
