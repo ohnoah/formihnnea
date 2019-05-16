@@ -1,11 +1,11 @@
 package classes.currentweather;
 
+import classes.AbstractWeatherInformation;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import classes.coords.Coordinate;
-import classes.AbstractWeatherInformation;
 import classes.SystemParameters;
 
 import java.lang.reflect.Type;
