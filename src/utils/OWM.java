@@ -23,8 +23,18 @@ public class OWM {
 
     private static final String api_id_owm = "d3701ecc1c0c1202a1e0add340d8d345";
 
-    public static ForecastInformationWeek getWeekForecast(Location location){
-        String query = "http://api.openweathermap.org/data/2.5/forecast?q=" + location.name + "&APPID=" + api_id_owm;
+    public static ForecastInformationWeek getWeekForecast(Location location) {
+
+        String query;
+
+        if (location.owmId != null){
+            query = "http://api.openweathermap.org/data/2.5/forecast?id=" + location.owmId+ "&APPID=" + api_id_owm;
+        } else if (location.name != null){
+            query = "http://api.openweathermap.org/data/2.5/forecast?q=" + location.name + "&APPID=" + api_id_owm;
+        } else {
+            System.out.println("Invalid location");
+            return null;
+        }
 
         JSONObject jsonObject = callQuery(query);
 
@@ -50,7 +60,16 @@ public class OWM {
     }
 
     public static ForecastInformationDay getDayForecast(Location location){
-        String query = "http://api.openweathermap.org/data/2.5/forecast?q=" + location.name + "&APPID=" + api_id_owm;
+        String query;
+
+        if (location.owmId != null){
+            query = "http://api.openweathermap.org/data/2.5/forecast?id=" + location.owmId+ "&APPID=" + api_id_owm;
+        } else if (location.name != null){
+            query = "http://api.openweathermap.org/data/2.5/forecast?q=" + location.name + "&APPID=" + api_id_owm;
+        } else {
+            System.out.println("Invalid location");
+            return null;
+        }
 
         JSONObject jsonObject = callQuery(query);
 
@@ -77,7 +96,16 @@ public class OWM {
 
 
     public static CurrentWeather getCurrentWeather(Location location){
-        String query = "http://api.openweathermap.org/data/2.5/weather?q=" + location.name + "&APPID=" + api_id_owm;
+        String query;
+
+        if (location.owmId != null){
+            query = "http://api.openweathermap.org/data/2.5/weather?id=" + location.owmId+ "&APPID=" + api_id_owm;
+        } else if (location.name != null){
+            query = "http://api.openweathermap.org/data/2.5/weather?q=" + location.name + "&APPID=" + api_id_owm;
+        } else {
+            System.out.println("Invalid location");
+            return null;
+        }
 
         JSONObject jsonObject = callQuery(query);
 
@@ -107,7 +135,7 @@ public class OWM {
         System.out.println(currentWeather.cityName); //Name of place
         System.out.println(currentWeather.visibility); //visibility
         System.out.println(currentWeather.snow); //amount of snow - may be null if no snow
-        System.out.println(currentWeather.weather); //general desc of weather - use for main icon
+        System.out.println(currentWeather.weather.get(0).description); //general desc of weather - use for main icon
         System.out.println(currentWeather.wind.speed); //wind speed (similarly "direction")
         System.out.println(currentWeather.mainParameters.temperature); //temperature, similarly:
                                         //mainParameters.minTemperature
