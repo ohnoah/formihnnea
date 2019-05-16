@@ -4,7 +4,9 @@ import classes.Location;
 import classes.currentweather.CurrentWeather;
 import classes.forecast.ForecastInformationDay;
 import classes.forecast.ForecastInformationWeek;
+import org.shredzone.commons.suncalc.SunPosition;
 import utils.OWM;
+import utils.scAPI;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +20,7 @@ public class UpdateAllLocations {
     private Map<Location, ForecastInformationWeek> dailyForecasts = new HashMap<>();
     private Map<Location, ForecastInformationDay> hourlyForecasts = new HashMap<>();
     private Map<Location, CurrentWeather> allCurrentWeather = new HashMap<>();
+    private Map<Location, SunPosition> currentSunPositions = new HashMap<>();
     private List<Location> locations = new ArrayList<>();
 
     private static UpdateAllLocations uwa;
@@ -48,12 +51,21 @@ public class UpdateAllLocations {
         allCurrentWeather = newCurrentWeather;
     };
 
+    private Runnable updateAllSunPositions = () -> {
+        Map<Location, SunPosition> newSunPositions = new HashMap<>();
+        for(Location location: currentSunPositions.keySet()) {
+            newSunPositions.put(location, scAPI.getSunPositionNow(location));
+        }
+        currentSunPositions = newSunPositions;
+    };
+
 
     private UpdateAllLocations(){
         executor = Executors.newScheduledThreadPool(3);
         executor.schedule(updateAllDaily, 10L, TimeUnit.MINUTES);
         executor.schedule(updateAllHourly, 10L, TimeUnit.MINUTES);
         executor.schedule(updateAllCurrent, 5L, TimeUnit.MINUTES);
+        executor.schedule(updateAllSunPositions, 5L, TimeUnit.MINUTES);
     }
 
 
@@ -62,6 +74,7 @@ public class UpdateAllLocations {
         dailyForecasts.put(location, OWM.getWeekForecast(location));
         hourlyForecasts.put(location, OWM.getDayForecast(location));
         allCurrentWeather.put(location, OWM.getCurrentWeather(location));
+        currentSunPositions.put(location, scAPI.getSunPositionNow(location));
     }
 
     public void removeLocation(Location location){
@@ -69,6 +82,7 @@ public class UpdateAllLocations {
         dailyForecasts.remove(location);
         hourlyForecasts.remove(location);
         allCurrentWeather.remove(location);
+        currentSunPositions.remove(location);
     }
 
     public ForecastInformationWeek getDaily(Location location){
@@ -92,6 +106,15 @@ public class UpdateAllLocations {
     public CurrentWeather getCurrent(Location location){
         if (allCurrentWeather.containsKey(location)) {
             return allCurrentWeather.get(location);
+        } else {
+            System.out.println("Location not found");
+        }
+        return null;
+    }
+
+    public SunPosition getSunPosition(Location location){
+        if (currentSunPositions.containsKey(location)) {
+            return currentSunPositions.get(location);
         } else {
             System.out.println("Location not found");
         }
