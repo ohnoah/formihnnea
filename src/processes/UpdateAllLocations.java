@@ -26,6 +26,10 @@ public class UpdateAllLocations {
     private static UpdateAllLocations uwa;
     private ScheduledExecutorService executor;
 
+    public List<Location> getLocations(){
+        return locations;
+    }
+
 
     private Runnable updateAllHourly = () -> {
         Map<Location, ForecastInformationDay> newHourlyForecasts = new HashMap<>();
