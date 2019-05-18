@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jars">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jars/json-simple-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/gson-2.8.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/lombok-plugin-0.25-2018.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/commons-suncalc-2.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

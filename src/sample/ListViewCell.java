@@ -1,18 +1,23 @@
 package sample;
 
+import classes.Location;
 import javafx.scene.control.ListCell;
+import javafx.util.Pair;
 
-public class ListViewCell extends ListCell<String>
+public class ListViewCell extends ListCell<WeatherTileData>
 {
     @Override
-    public void updateItem(String string, boolean empty)
+    public void updateItem(WeatherTileData data, boolean empty)
     {
-        super.updateItem(string,empty);
-        if(string != null)
+        super.updateItem(data, empty);
+        if(data != null)
         {
-            ListItem data = new ListItem();
-            data.setInfo(string);
-            setGraphic(data.getContainer());
+            ListItem listItem = new ListItem();
+            listItem.setInfo(data.getLocation(), data.isCurrentLocation());
+            setGraphic(listItem.getContainer());
+        } else {
+            AddListItem addListItem = new AddListItem();
+            setGraphic(addListItem.getContainer());
         }
     }
 }
