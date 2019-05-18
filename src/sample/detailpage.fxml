@@ -20,13 +20,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DetailsController">
     <children>
-      <ScrollPane layoutY="336.0" prefHeight="337.0" prefWidth="629.0">
+      <ScrollPane layoutY="336.0" prefHeight="337.0" prefWidth="700.0">
         <content>
-          <AnchorPane prefHeight="320.0" prefWidth="628.0">
+          <AnchorPane prefHeight="337.0" prefWidth="700.0">
                <children>
                   <GridPane prefHeight="320.0" prefWidth="629.0" style="-fx-background-color: FFFFFF;">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="47.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="40.0" prefWidth="47.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
@@ -34,6 +34,7 @@
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
@@ -47,71 +48,77 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/visibility.png" />
+                              <Image url="@../noahpics/visibility.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="39.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/rainchance.png" />
+                              <Image url="@../noahpics/rainchance.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/sunny.png" />
+                              <Image url="@../noahpics/sunny.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/clouds.png" />
+                              <Image url="@../noahpics/clouds.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/temp.png" />
+                              <Image url="@../noahpics/temp.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/sun.png" />
+                              <Image url="@../noahpics/sun.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/sun.png" />
+                              <Image url="@../noahpics/sun.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/sun.png" />
+                              <Image url="@../noahpics/sun.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/sun.png" />
+                              <Image url="@../noahpics/sun.png" />
                            </image>
                         </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12:00" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="18:00" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="15:00" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="21:00" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
                         <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/sun.png" />
+                              <Image url="@../noahpics/sun.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/sun.png" />
+                              <Image url="@../noahpics/sun.png" />
                            </image>
                         </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="00:00" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="03:00" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                         <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../pics/sun.png" />
+                              <Image url="@../noahpics/sun.png" />
                            </image>
                         </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="06:00" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../noahpics/sun.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="09:00" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                      </children>
                   </GridPane>
                </children>
@@ -155,7 +162,7 @@
                         </Label>
                         <ImageView fitHeight="60.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                             <image>
-                                <Image url="@../../pics/sun.png" />
+                                <Image url="@../noahpics/sun.png" />
                             </image>
                             <GridPane.margin>
                                 <Insets bottom="10.0" />
@@ -175,7 +182,7 @@
                     <children>
                         <ImageView fitHeight="59.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowSpan="2">
                             <image>
-                                <Image url="@../../pics/visibility.png" />
+                                <Image url="@../noahpics/visibility.png" />
                             </image>
                         </ImageView>
                         <Label text="VISIBILITY" GridPane.columnIndex="1" GridPane.halignment="CENTER">
@@ -202,7 +209,7 @@
                     <children>
                         <ImageView fitHeight="59.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowSpan="2">
                             <image>
-                                <Image url="@../../pics/rainchance.png" />
+                                <Image url="@../noahpics/rainchance.png" />
                             </image>
                         </ImageView>
                         <Label text="CHANCE OF RAIN" GridPane.columnIndex="1" GridPane.halignment="CENTER">
@@ -229,7 +236,7 @@
                     <children>
                         <ImageView fitHeight="59.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowSpan="2">
                             <image>
-                                <Image url="@../../pics/sunny.png" />
+                                <Image url="@../noahpics/sunny.png" />
                             </image>
                         </ImageView>
                         <Label text="SUN POSITION" GridPane.columnIndex="1" GridPane.halignment="CENTER">
@@ -256,7 +263,7 @@
                     <children>
                         <ImageView fitHeight="59.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowSpan="2">
                             <image>
-                                <Image url="@../../pics/clouds.png" />
+                                <Image url="@../noahpics/clouds.png" />
                             </image>
                         </ImageView>
                         <Label text="CLOUD COVER" GridPane.columnIndex="1" GridPane.halignment="CENTER">
@@ -283,7 +290,7 @@
                     <children>
                         <ImageView fitHeight="51.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowSpan="2">
                             <image>
-                                <Image url="@../../pics/sunrise.png" />
+                                <Image url="@../noahpics/sunrise.png" />
                             </image>
                         </ImageView>
                         <Label text="SUNRISE TIME" GridPane.columnIndex="1" GridPane.halignment="CENTER">
@@ -310,7 +317,7 @@
                     <children>
                         <ImageView fitHeight="57.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowSpan="2">
                             <image>
-                                <Image url="@../../pics/sunset.png" />
+                                <Image url="@../noahpics/sunset.png" />
                             </image>
                         </ImageView>
                         <Label text="SUNSET TIME" GridPane.columnIndex="1" GridPane.halignment="CENTER">

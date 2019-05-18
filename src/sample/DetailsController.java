@@ -44,7 +44,7 @@ public class DetailsController {
     public void initialize(){
         CurrentWeather cw = OWM.getCurrentWeather(new Location(getCity()+","+getCountry()));
         locate.setText(getCity() + ", " + getCountry() );
-        temperature.setText(new Double(cw.mainParameters.temperature).intValue() +"\u2103");
+        temperature.setText(String.valueOf(cw.mainParameters.temperature - 273.15));
         visibility.setText(cw.visibility);
         sunrise.setText(cw.systemParameters.sunrise.toString().split(" ")[3].substring(0,5));
         sunset.setText(cw.systemParameters.sunset.toString().split(" ")[3].substring(0,5));
