@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/formihnnea5.iml" filepath="$PROJECT_DIR$/formihnnea5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Interaction Design Project - Why Even Bother.iml" filepath="$PROJECT_DIR$/.idea/Interaction Design Project - Why Even Bother.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/formihnnea.iml" filepath="$PROJECT_DIR$/.idea/formihnnea.iml" />
     </modules>
   </component>
 </project>

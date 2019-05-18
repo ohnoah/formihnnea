@@ -6,6 +6,7 @@ import classes.forecast.ForecastInformationDay;
 import classes.forecast.ForecastInformationWeek;
 import org.shredzone.commons.suncalc.SunPosition;
 import utils.OWM;
+import utils.Search;
 import utils.scAPI;
 
 import java.util.ArrayList;
@@ -74,6 +75,12 @@ public class UpdateAllLocations {
 
 
     public void addLocation(Location location){
+        if (location.coordinate == null){
+            if (location.googleId == null){
+                location.googleId = Search.autoCompleteInput(location.name).get(0).googleId;
+            }
+            location.coordinate = Search.getCoords(location.googleId);
+        }
         locations.add(location);
         dailyForecasts.put(location, OWM.getWeekForecast(location));
         hourlyForecasts.put(location, OWM.getDayForecast(location));

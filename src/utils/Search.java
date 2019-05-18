@@ -17,7 +17,6 @@ public class Search {
     //String for Google API
     private static final String api_id_google = "AIzaSyAhxpVJs2OH7oYj_LM8DR5Yyzdyl8eMGu0";
 
-
     //Gets coordinates for a corresponding GoogleID
     public static Coordinate getCoords(String googleId){
 
