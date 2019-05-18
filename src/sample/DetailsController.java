@@ -2,19 +2,15 @@ package sample;
 
 import classes.Location;
 import classes.currentweather.CurrentWeather;
-import classes.forecast.daily.Temperature;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
-import sample.Main;
-
 import java.io.IOException;
-
-import utils.LocationFinder;
 import utils.OWM;
 
+import static sample.Main.*;
 
 
 
@@ -34,27 +30,27 @@ public class DetailsController {
 
     public void displayHourly(){
         System.out.println("display hourly");
-        System.out.println("country"+getCountry());
-        System.out.println("city" + getCity());
+        System.out.println("country"+ Main.getCountry());
+        System.out.println("city" + Main.getCity());
     }
 
     public void back() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/mainpage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("detailpage.fxml"));
         Main.stage.setTitle("Hello World");
-        stage.setScene(new Scene(root, 479, 673));
+        Main.stage.setScene(new Scene(root, 479, 673));
         stage.show();
     }
 
     public void initialize(){
-        OWM owmObj = new OWM();
-        LocationFinder locationFinder = new LocationFinder();
-        Location location = locationFinder.getCurrentLocation();
-        locate.setText(locationFinder.getCity() + ", " + getCountry() );
-        CurrentWeather cw = owmObj.getCurrentWeather(new Location(getCity()+","+getCountry()), "metric");
+        CurrentWeather cw = OWM.getCurrentWeather(new Location(getCity()+","+getCountry()));
+        locate.setText(getCity() + ", " + getCountry() );
         temperature.setText(new Double(cw.mainParameters.temperature).intValue() +"\u2103");
         visibility.setText(cw.visibility);
         sunrise.setText(cw.systemParameters.sunrise.toString().split(" ")[3].substring(0,5));
         sunset.setText(cw.systemParameters.sunset.toString().split(" ")[3].substring(0,5));
+        cloudCover.setText(new Double(cw.clouds.cloudiness).intValue() +"%");
+        String rainOutput = cw.rain != null ? (cw.rain.rainAmt + "%") : "N/A";
+        chanceOfRain.setText(rainOutput);
 
     }
 
