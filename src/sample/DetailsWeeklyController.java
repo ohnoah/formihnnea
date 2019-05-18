@@ -11,10 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ToggleButton;
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.MathContext;
-
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -22,43 +18,46 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import utils.OWM;
 
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.MathContext;
+
 import static sample.Main.*;
 
 
-
-public class DetailsController {
+public class DetailsWeeklyController {
 
 
     //set up IDs for all variables in the system
     @FXML
-    private Label sunPos7;
-
-    @FXML
-    private Label sunPos6;
-
-    @FXML
-    private Label sunPos5;
-
-    @FXML
-    private Label sunPos4;
-
-    @FXML
-    private Label sunPos3;
-
-    @FXML
     private Label chanceOfRain;
 
     @FXML
-    private Label sunPos2;
+    private Label time1;
 
     @FXML
-    private Label sunPos1;
+    private Label time2;
+
+    @FXML
+    private Label time3;
 
     @FXML
     private AnchorPane anchorPane;
 
     @FXML
-    private Label sunPos8;
+    private Label time4;
+
+    @FXML
+    private Label time5;
+
+    @FXML
+    private Label time6;
+
+    @FXML
+    private Label time7;
+
+    @FXML
+    private Label time8;
 
     @FXML
     private Label vis7;
@@ -103,25 +102,82 @@ public class DetailsController {
     private ToggleButton btnHourly;
 
     @FXML
+    private Label sundown8;
+
+    @FXML
+    private Label sundown6;
+
+    @FXML
     private Label sunrise;
+
+    @FXML
+    private Label sundown7;
 
     @FXML
     private Label locate;
 
     @FXML
+    private Label sundown1;
+
+    @FXML
+    private Label sunup2;
+
+    @FXML
+    private Label sunup1;
+
+    @FXML
     private Label temp2;
+
+    @FXML
+    private Label sunup4;
+
+    @FXML
+    private Label sundown4;
 
     @FXML
     private Label temp3;
 
     @FXML
+    private Label sunup3;
+
+    @FXML
+    private Label sundown5;
+
+    @FXML
+    private Label sundown2;
+
+    @FXML
+    private Label sunup6;
+
+    @FXML
     private Label temp1;
+
+    @FXML
+    private Label sunup5;
+
+    @FXML
+    private Label sundown3;
+
+    @FXML
+    private ImageView sun2;
 
     @FXML
     private Label rain8;
 
     @FXML
+    private Label sunup8;
+
+    @FXML
+    private ImageView sun3;
+
+    @FXML
+    private Label sunup7;
+
+    @FXML
     private Label cld7;
+
+    @FXML
+    private ImageView sun1;
 
     @FXML
     private Label cld8;
@@ -160,7 +216,22 @@ public class DetailsController {
     private Label cld2;
 
     @FXML
+    private ImageView sun8;
+
+    @FXML
+    private ImageView sun6;
+
+    @FXML
+    private ImageView sun7;
+
+    @FXML
+    private ImageView sun4;
+
+    @FXML
     private GridPane hourlyGrid;
+
+    @FXML
+    private ImageView sun5;
 
     @FXML
     private Label rain1;
@@ -206,17 +277,14 @@ public class DetailsController {
     //called when the back button is pressed
     public void back() throws IOException {
         root = FXMLLoader.load(getClass().getResource("main.fxml"));
-        Main.stage.setTitle("Back from Details");
+        Main.stage.setTitle("Back from Weekly");
         Main.stage.setScene(new Scene(root, 479, 673));
         stage.show();
     }
 
     //When the button is toggled we switch to weekly
     public void weeklySwitch(ActionEvent event) throws IOException {
-        System.out.println("HELLO");
-        System.out.println(btnHourly.isSelected());
 
-        System.out.println("GOT HERE");
         Parent weeklyParent = new FXMLLoader().load(getClass().getResource("detailpageweekly.fxml"));
         Scene weeklyScene = new Scene(weeklyParent);
 
@@ -242,8 +310,7 @@ public class DetailsController {
     }
     //Mihnea's method which initializes all fields in the top part of the screen
     public void initialize(){
-        btnHourly.setSelected(true);
-        System.out.println(btnHourly.isSelected());
+        btnWeekly.setSelected(true);
         CurrentWeather cw = OWM.getCurrentWeather(new Location(getCity()+","+getCountry()));
         locate.setText(getCity() + ", " + getCountry() );
         BigDecimal bd = new BigDecimal(cw.mainParameters.temperature - 273.15);
