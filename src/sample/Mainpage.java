@@ -1,5 +1,7 @@
 package sample;
 
+import classes.Location;
+import classes.currentweather.CurrentWeather;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,7 +16,12 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.Pair;
+import processes.UpdateAllLocations;
+import utils.OWM;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashSet;
@@ -25,7 +32,7 @@ import java.util.Set;
 public class Mainpage implements Initializable {
 
     @FXML
-    private AnchorPane container;
+    private Pane container;
 
     @FXML
     private MenuButton menu;
@@ -33,52 +40,59 @@ public class Mainpage implements Initializable {
     @FXML
     private ListView listView;
 
-
-    private Set<String> stringSet = new HashSet<>();
     ObservableList observableList = FXCollections.observableArrayList();
 
     @FXML
     private void navigateToSettings(ActionEvent event) throws IOException {
-        System.out.println("Setting button clicked");
-
-        Stage appStage=(Stage)menu.getScene().getWindow();
-        Parent settingsParent = FXMLLoader.load(getClass().getResource("settingspage.fxml"));
-
-        appStage.setScene(new Scene(settingsParent));
-        appStage.show();
+        Parent root = FXMLLoader.load(getClass().getResource("../../../formihnnea2/src/sample/settingspage.fxml"));
+        Main.stage.setScene(new Scene(root, 400, 700));
+        Main.stage.show();
 
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL locationUrl, ResourceBundle resources) {
         /*
         TODO:
          - load list of locations -> populate weather data list
          - load background image for current location's weather data
          */
 
+
+
+        /*
         // Set background image
-        BackgroundImage myBI= new BackgroundImage(new Image("https://www.maxpixel.net/Rain-Gray-Wet-Drops-Water-Droplets-Window-354617", true),
-                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
+        BackgroundImage myBI= null;
+
+        try {
+            myBI = new BackgroundImage(new Image(new FileInputStream("pics/background.jpg")),
+                    BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                    BackgroundSize.DEFAULT);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         container.setBackground(new Background(myBI));
 
+         */
 
+
+        UpdateAllLocations.getUwa().addLocation(Location.fromName("Cambridge, UK"));
+        UpdateAllLocations.getUwa().addLocation(Location.fromName("Bristol, UK"));
+        UpdateAllLocations.getUwa().addLocation(Location.fromName("Budapest"));
+
+
+        boolean isFirst = true;
         // Populate list
-        stringSet.add("String 1");
-        stringSet.add("String 2");
-        stringSet.add("String 3");
-        stringSet.add("String 4");
-        observableList.setAll(stringSet);
+        for (Location location : UpdateAllLocations.getUwa().getLocations()) {
+            System.out.println(location);
+            observableList.add(new WeatherTileData(location, isFirst));
+            isFirst = false;
+        }
+
+        // If we pass a null into the list, it creates an Add New Location Tile
+        observableList.add(null);
         listView.setItems(observableList);
-        listView.setCellFactory(new Callback<ListView<String>, ListCell<String>>()
-        {
-            @Override
-            public ListCell<String> call(ListView<String> listView)
-            {
-                return new ListViewCell();
-            }
-        });
+        listView.setCellFactory((Callback<ListView<WeatherTileData>, ListCell<WeatherTileData>>) listView -> new ListViewCell());
     }
 
 

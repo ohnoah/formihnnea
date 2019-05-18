@@ -8,11 +8,16 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static Stage stage;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+        this.stage = primaryStage;
+
         Parent root = FXMLLoader.load(getClass().getResource("mainpage.fxml"));
         primaryStage.setTitle("Weather Photo");
-        primaryStage.setScene(new Scene(root, 1080, 1920));
+        primaryStage.setScene(new Scene(root, 400, 700));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
