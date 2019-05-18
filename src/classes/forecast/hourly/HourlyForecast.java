@@ -26,7 +26,8 @@ public class HourlyForecast extends AbstractWeatherInformation implements Foreca
     @SerializedName("dt_txt")
     public Date calculationDate;
 
-    public Weather getWeather(){
-        return weather.get(0);
-    }
+    //If you're wondering why your code has been deleted, you need to use forecasts.get(value) to get weather
+    //There is more than one
+    //They're in order in 3hr increments
+    //When making GUI just make as many windows as there are entries in the list
 }
