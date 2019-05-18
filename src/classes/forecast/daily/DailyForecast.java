@@ -10,7 +10,9 @@ import lombok.EqualsAndHashCode;
 import classes.AbstractWeatherResponse;
 import classes.forecast.Forecast;
 import classes.forecast.ForecastInformation;
+import utils.QueryParser;
 
+import java.awt.*;
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -33,4 +35,9 @@ public class DailyForecast extends AbstractWeatherResponse implements Forecast {
     public Weather getWeather(){
         return weather.get(0);
     }
+
+    public Image getIcon(){
+        return QueryParser.getIcon(weather.get(0).icon);
+    }
+
 }

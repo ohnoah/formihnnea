@@ -10,7 +10,9 @@ import classes.gson.ISOStringDateTypeAdapter;
 import classes.AbstractWeatherInformation;
 import classes.forecast.Forecast;
 import classes.forecast.ForecastInformation;
+import utils.QueryParser;
 
+import java.awt.*;
 import java.lang.reflect.Type;
 import java.util.Date;
 import java.util.List;
@@ -28,5 +30,9 @@ public class HourlyForecast extends AbstractWeatherInformation implements Foreca
 
     public Weather getWeather(){
         return weather.get(0);
+    }
+
+    public Image getIcon(){
+        return QueryParser.getIcon(weather.get(0).icon);
     }
 }
