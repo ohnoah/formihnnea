@@ -7,7 +7,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import classes.coords.Coordinate;
 import classes.SystemParameters;
+import utils.QueryParser;
 
+import java.awt.*;
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -28,4 +30,8 @@ public class CurrentWeather extends AbstractWeatherInformation {
     public String visibility;
     @SerializedName("sys")
     public SystemParameters systemParameters;
+
+    public Image getIcon(){
+        return QueryParser.getIcon(weather.get(0).icon);
+    }
 }
