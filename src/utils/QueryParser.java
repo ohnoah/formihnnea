@@ -46,4 +46,8 @@ public class QueryParser {
         }
         return jsonObject;
     }
+
+    public static void main(String[] args) {
+        Image image = OWM.getCurrentWeather(LocationFinder.getCurrentLocation()).getIcon();
+    }
 }
